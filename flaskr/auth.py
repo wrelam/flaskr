@@ -49,7 +49,7 @@ def login():
             'SELECT * FROM user WHERE username = ?', (username,)).fetchone()
 
         if user is None or not check_password_hash(user['password'], password):
-            error = 'Incorrect username or password'
+            error = 'Incorrect username or password.'
 
         if error is None:
             session.clear()
